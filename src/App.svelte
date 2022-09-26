@@ -15,11 +15,12 @@
 
 </script>
 
-<div class="bg-red-200 h-screen">
-  <div class="bg-blue-100 h-1/2">
+<div class="h-screen flex-col flex sm:flex-row">
+
+  <div class="bg-blue-100 h-1/2 sm:h-full sm:w-1/2">
 
   </div>
-  <div class="bg-yellow-300 h-1/2">
+  <div class="bg-yellow-300 h-1/2 sm:h-full sm:w-1/2">
 
   </div>
 </div>
