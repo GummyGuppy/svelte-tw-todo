@@ -2,7 +2,16 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{svelte,js,ts}'],
   theme: {
-    extend: {},
+
+    letterSpacing: {
+      widest: '4px'
+    },
+
+    extend: {
+      animationDuration: {
+				"2s": "2s",
+			}
+    },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }

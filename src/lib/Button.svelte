@@ -10,7 +10,8 @@
         px-5 py-2 
         font-medium 
         border-2
-      hover:border-[#646cff]"
+      hover:border-[#646cff]
+      animate-in slide-in-from-bottom duration-2s tracking-widest"
       on:click={fn}
     
 >
