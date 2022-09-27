@@ -1,5 +1,12 @@
 <script>
-  export let title, fn
+
+  import Icon from '@iconify/svelte';
+  
+  export let title, icon = null
+
+  export let fn = () => {
+
+  } 
   
 
 </script>
@@ -11,9 +18,16 @@
         font-medium 
         border-2
       hover:border-[#646cff]
+      hover:bg-slate-300
+      active:bg-slate-100
       animate-in slide-in-from-bottom duration-2s tracking-widest"
       on:click={fn}
-    
 >
-{title}  
+{#if title}
+  {title}
+{:else}
+  <Icon {icon}/>
+{/if}
+
 </button>
+

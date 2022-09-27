@@ -10,7 +10,10 @@ module.exports = {
     extend: {
       animationDuration: {
 				"2s": "2s",
-			}
+			},
+      backgroundImage: {
+        'ocean': "url('https://img.icons8.com/emoji/48/000000/dodo.png')",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
