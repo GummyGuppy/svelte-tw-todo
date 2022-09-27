@@ -8,6 +8,9 @@ module.exports = {
     },
 
     extend: {
+      colors: {
+
+      },
       animationDuration: {
 				"2s": "2s",
 			},
