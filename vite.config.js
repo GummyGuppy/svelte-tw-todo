@@ -8,8 +8,5 @@ export default defineConfig({
       preprocess: [sveltePreprocess({ postcss: true })],
     }),
   ],
-  server: {
-    host: '0.0.0.0',
-    port: 3000,
-  },
+  
 })
