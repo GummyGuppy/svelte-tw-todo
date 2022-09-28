@@ -4,63 +4,92 @@
   import Footer from './lib/Footer.svelte'
   import BgIcon from './lib/Icon.svelte'
   import Icon from '@iconify/svelte';
-  import Item from './lib/List-item.svelte'
+  import Item from './lib/List-item.svelte' 
+  
 
 
-  let todos = ["an item","an item","an item","an item","an item"]
+
+  let todos = ["1", "2an item","3an item","4an item","5an item", "6more items","7an item", "more items","an item", "more items"]
 
   $: value = ''
-  $: page = 1
+
+  let currentPage = 1
+  let pageSize = 4
+ 
+
+  $: count = 0
 
   let success = false
 
+  let type = ''
+
+  let animateIn = 'animate-in slide-in-from-bottom duration-2s'
+
   function create(){
-    console.log('create clicked')
-    todos = [...todos, value]
-    value = ''
-    success = true
+    
+    if(value != ''){
+      todos = [...todos, value]
+      value = ''
+      success = true
+      setTimeout(() => {
+        success = false
+        
+      },3000)
+    }
+    else{
+      console.log('nothing in text')
+    }
+
+    
   }
+
+
  
   function next(){
-    page++
+    
+    count = count + 5
+    currentPage++
+    
   }
 
   function previous(){
-    page == 1 ? console.log('page 1') : page--
+    
+    //check to see if at first page
+    if(currentPage > 1){
+
+      currentPage--
+      count = count - 5
+    } 
   }
 
 </script>
 
 <div class="h-screen flex-col flex sm:flex-row overflow-hidden">
 
-  <div class="flex flex-col justify-between items-center h-1/2 sm:h-full sm:w-1/2 p-2">
+
+  
+
+  <div class="flex flex-col h-full justify-center items-center sm:h-full sm:w-1/2 p-2">
       <div class="bg-blue-100 flex h-12 p-2 justify-center items-center w-full lg:hidden">
         <h1 class="text-4xl">
           Todo
         </h1>
       </div>
 
-      <div class="todo-list flex flex-col items-center justify-center gap-4 w-full h-full
-      ">
-        <div class=" lg:w-12 lg:h-12 bg-red-200"></div>
+      <div class="todo-list flex flex-col items-center justify-center gap-4 w-full h-1/2
+                  lg:overflow-y-scroll">
+            
+        {#each todos as todo, i}
 
-            {#each todos as todo}
-              <Item {todo}/>
-            {/each}
-              
-            <div class="pagination flex
-            gap-12">
-            <Button title={null} icon="ion:caret-back" fn={previous}/>
-            <Button title={page} icon={null}/>
-            <Button title={null} icon="ion:caret-forward" fn={next}/>
-            </div>
+            <Item todo={todos[i]}/>
+            
+        {/each}
+                       
+
 
 
       </div>
               
-
- 
-
     
   </div>
 
