@@ -9,7 +9,7 @@
 
 
 
-  let todos = ["1", "2an item","3an item","4an item","5an item", "6more items","7an item", "more items","an item", "more items"]
+  let todos = ["1", "2an item","3an item","4an item","5an item", "6more items"]
 
   $: value = ''
 
@@ -69,14 +69,14 @@
 
   
 
-  <div class="flex flex-col h-full justify-center items-center sm:h-full sm:w-1/2 p-2">
-      <div class="bg-blue-100 flex h-12 p-2 justify-center items-center w-full lg:hidden">
+  <div class="flex flex-col h-full justify-between sm:h-full sm:w-1/2 p-2">
+      <div class="bg-blue-100 flex h-12 p-2 w-full lg:hidden">
         <h1 class="text-4xl">
           Todo
         </h1>
       </div>
 
-      <div class="todo-list flex flex-col items-center justify-center gap-4 w-full h-1/2
+      <div class="todo-list flex flex-col items-center justify-center gap-4 pb-12 w-full h-1/2
                   lg:overflow-y-scroll">
             
         {#each todos as todo, i}
