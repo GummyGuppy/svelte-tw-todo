@@ -2,7 +2,7 @@
 
 <br>
 
-<div style="display:flex">
+<div style="display:flex h-10">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/199px-Svelte_Logo.svg.png" />
   <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" />
 </div>
